@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot name="single_joint">
+  <material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.6" radius="0.2"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.6" radius="0.2"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="rotate_joint">
+    <visual>
+      <geometry>
+        <box size="0.6 0.1 0.2"/>
+      </geometry>
+      <origin rpy="1.57075 0 0" xyz="0.3 0 0.37"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.6 0.1 0.2"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="base_to_rotate_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rotate_joint"/>
+    <origin xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+</robot>

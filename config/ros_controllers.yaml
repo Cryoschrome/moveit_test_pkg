@@ -1,0 +1,21 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    simple_joint_controller:
+      type: position_controllers/JointTrajectoryController
+
+simple_joint_controller:
+  ros__parameters:
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+  joints:
+    - base_to_rotate_joint
+  gains:
+    base_to_rotate_joint:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1

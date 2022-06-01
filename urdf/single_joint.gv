@@ -1,0 +1,8 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"rotate_joint" [label="rotate_joint"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "base_to_rotate_joint" [label="xyz: 0 0 0.35 \nrpy: 0 -0 0"]
+"base_to_rotate_joint" -> "rotate_joint"
+}

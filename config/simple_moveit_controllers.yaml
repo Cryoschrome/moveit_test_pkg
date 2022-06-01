@@ -1,0 +1,7 @@
+controller_list:
+  - name: simple_joint_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - base_to_rotate_joint
